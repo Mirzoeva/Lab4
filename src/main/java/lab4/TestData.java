@@ -6,6 +6,7 @@ public class TestData implements Serializable {
     private TestPackage;
     private String testName;
     private String actualResult;
-    private String 
+    private String rightresult;
+    private Object[] parametrs;
 
 }

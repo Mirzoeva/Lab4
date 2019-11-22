@@ -14,7 +14,7 @@ public class TestData implements Serializable {
 
     @JsonCreator
     public TestEntity(@JsonProperty("testName")String testName,
-                      @JsonProperty("rightResult")String rightResult,
+                      @JsonProperty("expectedResult")String rightResult,
                       @JsonProperty("parameters")Object[] parameters){
         this.testName = testName;
         this.rightResult = rightResult;

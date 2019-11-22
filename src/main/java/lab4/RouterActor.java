@@ -27,7 +27,7 @@ public class RouterActor extends AbstractActor {
     }
 
     private void RunTests(TestPackage testPackage){
-        for (TestData test: testPackage.getAllTests()){
+        for (TestData test: testPackage.()){
         }
 
     }

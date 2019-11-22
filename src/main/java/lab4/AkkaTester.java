@@ -52,7 +52,8 @@ public class AkkaTester extends  AllDirectives{
 
         System.out.println(startMessage);
         System.in.read();
-        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
+        binding.thenCompose(ServerBinding::unbind)
+                .thenAccept(unbound -> system.terminate());
 
     }
 

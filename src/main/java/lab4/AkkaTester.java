@@ -28,7 +28,7 @@ public class AkkaTester {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
-        HttpServer instance = new HttpServer(actorRouter);
+        HttpServer instance = new AkkaTester(actorRouter);
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute(system).flow(system, materializer);

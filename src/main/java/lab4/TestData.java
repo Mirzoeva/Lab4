@@ -7,6 +7,6 @@ public class TestData implements Serializable {
     private String testName;
     private String actualResult;
     private String rightresult;
-    private Object[] parametrs;
+    private Object[] parameters;
 
 }

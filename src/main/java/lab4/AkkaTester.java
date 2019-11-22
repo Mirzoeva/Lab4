@@ -13,11 +13,12 @@ import akka.stream.javadsl.Flow;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
-import com.sun.net.httpserver.HttpServer;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import java.util.concurrent.CompletionStage;
 import scala.concurrent.Future;
+import static akka.http.javadsl.server.PathMatchers.longSegment;
+
 
 public class AkkaTester extends  AllDirectives{
 
@@ -67,7 +68,7 @@ public class AkkaTester extends  AllDirectives{
                 post(() ->
                         path("postPackage", () ->
                                 entity(Jackson.unmarshaller(TestPackage.class), testPackage -> {
-                                    routerActor.tell(testPackage, ActorRef.noSender());
+                                    actorRouter.tell(testPackage, ActorRef.noSender());
                                     return complete("Start tests");
                                         })))
                         );

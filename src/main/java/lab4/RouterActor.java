@@ -27,12 +27,14 @@ public class RouterActor extends AbstractActor {
     }
 
     private void RunTests(TestPackage testPackage){
-        for (TestData test: testPackage.()){
+        for (TestData test: testPackage.getTests()){
+            test.setParentPackage(testPackage);
+            router.tell(test, ActorRef.noSender());
         }
-
     }
 
-    @Override Receive createReceive(){
+    @Override
+    public Receive createReceive(){
         return ReceiveBuilder.create()
                 .match(TestPackage.class, msg -> RunTests(msg))
                 .match(String.class, msg -> storageActor.forward(msg, getContext()))

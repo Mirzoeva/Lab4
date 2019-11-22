@@ -26,6 +26,11 @@ public class RouterActor extends AbstractActor {
         );
     }
 
+    private void RunTests(TestPackage testPackage){
+        for (\ test: )
+
+    }
+
     @Override Receive createReceive(){
         return ReceiveBuilder.create()
                 .match(TestPackage.class, msg -> RunTests(msg))

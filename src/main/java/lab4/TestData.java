@@ -13,7 +13,7 @@ public class TestData implements Serializable {
     private Object[] parameters;
 
     @JsonCreator
-    public TestEntity(@JsonProperty("testName")String testName,
+    public TestData(@JsonProperty("testName")String testName,
                       @JsonProperty("rightResult")String rightResult,
                       @JsonProperty("parameters")Object[] parameters){
         this.testName = testName;

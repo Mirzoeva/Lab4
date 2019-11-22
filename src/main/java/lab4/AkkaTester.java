@@ -19,7 +19,15 @@ import akka.pattern.Patterns;
 import java.util.concurrent.CompletionStage;
 import scala.concurrent.Future;
 
-public class AkkaTester {
+public class AkkaTester extends  AllDirectives{
+
+    private ActorRef actorRouter;
+
+    private AkkaTester(ActorRef actorRouter){
+        this.actorRouter = actorRouter;
+    }
+
+
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("AkkaTester");
         ActorRef actorRouter = system.actorOf(Props.create(RouterActor.class, system),
@@ -28,7 +36,7 @@ public class AkkaTester {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
-        HttpServer instance = new AkkaTester(actorRouter);
+        AkkaTester instance = new AkkaTester(actorRouter);
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
                 instance.createRoute(system).flow(system, materializer);

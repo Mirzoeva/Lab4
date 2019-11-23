@@ -17,7 +17,6 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import java.util.concurrent.CompletionStage;
 import scala.concurrent.Future;
-import static akka.http.javadsl.server.PathMatchers.longSegment;
 import static akka.http.javadsl.server.PathMatchers.segment;
 
 

@@ -1,9 +1,19 @@
 package lab4;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.List;
 
 public class RequestAnswer implements Serializable {
     private  String packageId;
-    private List<>
+    private List<TestResult> tests;
+
+    @JsonCreator
+    public RequestAnswer(@JsonProperty("packageId") String packageId,
+                         @JsonProperty("tests") List<TestResult> tests){
+        
+
+    }
 }

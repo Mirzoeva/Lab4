@@ -10,7 +10,7 @@ import java.util.Collections;
 public class RouterActor extends AbstractActor {
     private ActorRef storageActor;
     private SupervisorStrategy strategy;
-    private ActorRef router;
+    private ActorRef testerActor;
 
     RouterActor(ActorSystem system){
         this.storageActor = system.actorOf(Props.create(StorageActors.class), "StorageActor");
@@ -19,7 +19,7 @@ public class RouterActor extends AbstractActor {
                 Duration.ofMinutes(1),
                 Collections.singletonList(Exception.class)
         );
-        this.router = system.actorOf(
+        this.testerActor = system.actorOf(
                 new RoundRobinPool(Constans.workersCount)
                         .withSupervisorStrategy(strategy)
                         .props(Props.create(TesterActor.class, storageActor))
@@ -29,7 +29,7 @@ public class RouterActor extends AbstractActor {
     private void RunTests(TestPackage testPackage){
         for (TestData test: testPackage.getTests()){
             test.setParentPackage(testPackage);
-            router.tell(test, ActorRef.noSender());
+            testerActor.tell(test, ActorRef.noSender());
         }
     }
 

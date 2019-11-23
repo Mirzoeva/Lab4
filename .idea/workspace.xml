@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eac2c71d-2a1a-4839-8dae-9a965245c000" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/StorageActors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/StorageActors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/TestData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/TestPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/TestPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/TestResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/TestResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lab4/TesterActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lab4/TesterActor.java" afterDir="false" />
-    </list>
+    <list default="true" id="eac2c71d-2a1a-4839-8dae-9a965245c000" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/TestResult.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -127,7 +121,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/lab4/RouterActor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -251,7 +245,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574476211069" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574476225462" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -299,18 +293,18 @@
       <option name="presentableId" value="Default" />
       <updated>1573730156259</updated>
       <workItem from="1573730159288" duration="421000" />
-      <workItem from="1574379483169" duration="10966000" />
+      <workItem from="1574379483169" duration="11210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11559000" />
+    <option name="totallyTimeSpent" value="11803000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="924" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20181406" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12732475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -348,13 +342,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/AirportsInfoApp.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/RouterActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lab4/AkkaTester.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -473,6 +460,13 @@
             <element signature="e#589#590#0" expanded="true" />
             <element signature="e#615#616#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lab4/RouterActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
         </state>
       </provider>
     </entry>

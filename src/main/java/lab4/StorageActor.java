@@ -63,7 +63,7 @@ public class StorageActor extends AbstractActor {
             }
             return new RequestAnswers(packageId, testAnswers);
         } catch (Exception exception) {
-            exception.printStackTrace();
+            //exception.printStackTrace();
             return new RequestAnswers("No such package", testAnswers);
         }
     }

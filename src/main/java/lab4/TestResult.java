@@ -10,9 +10,24 @@ public class TestResult implements Serializable {
 
 
     public String getActualResult(){
-        
+        return this.actualResult;
     }
 
+    public String getRightResult(){
+        return this.rightResult;
+    }
+
+    public void setActualResult(String actualResult){
+        this.actualResult = actualResult;
+    }
+
+    public void setRightResult(String rightResult){
+        this.rightResult = rightResult;
+    }
+
+    public Boolean getSucces(){
+        return this.succes;
+    }
 
 
 }

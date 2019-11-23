@@ -1,4 +1,9 @@
 package lab4;
 
-public class RequestAnswer {
+import java.io.Serializable;
+import java.util.List;
+
+public class RequestAnswer implements Serializable {
+    private  String packageId;
+    private List<>
 }

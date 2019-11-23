@@ -29,7 +29,9 @@ public class RequestAnswer implements Serializable {
         this.packageId = packageId;
     }
 
-    public void setTests(List)
+    public void setTests(List<TestResult> tests){
+        this.tests = tests;
+    }
 
 
 }

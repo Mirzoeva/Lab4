@@ -20,7 +20,7 @@ public class RouterActor extends AbstractActor {
                 Collections.singletonList(Exception.class)
         );
         this.router = system.actorOf(
-                new RoundRobinPool(Constans.workesCount)
+                new RoundRobinPool(Constans.workersCount)
                         .withSupervisorStrategy(strategy)
                         .props(Props.create(TesterActor.class, storageActor))
         );

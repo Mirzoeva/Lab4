@@ -49,14 +49,6 @@ public class StorageActor extends AbstractActor {
 //        }
 //    }
 
-    private ArrayList<TestData> getTests(String packageId) throws Exception{
-        if (this.store.containsKey(packageId)){
-            return this.store.get(packageId);
-        } else {
-            throw  new Exception("No such package");
-        }
-    }
-
     private RequestAnswers makeResults(String packageId) {
         ArrayList<TestResult> testAnswers = new ArrayList<>();
         if (this.store.containsKey(packageId)) {

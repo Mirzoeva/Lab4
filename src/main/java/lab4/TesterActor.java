@@ -21,7 +21,7 @@ public class TesterActor extends AbstractActor {
                 ScriptEngineManager().getEngineByName("nashorn");
         engine.eval(testData.getParentPackage().getJsCode());
         Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction(testData.getParentPackage().getJsFunctionName(), testData.getParameters().toString());
+        return invocable.invokeFunction(testData.getParentPackage().getJsFunctionName(), testData.getParameters()).toString();
     }
 
     private TestData checkResult(TestData testData){

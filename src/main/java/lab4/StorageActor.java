@@ -49,6 +49,7 @@ public class StorageActor extends AbstractActor {
 
 
     private RequestAnswers makeResults(String packageId) {
+        ArrayList<TestResult> testAnswers = new ArrayList<>();
         try {
             for (TestData test : this.getTests(packageId)) {
                 String actualResult = test.getActualResult();

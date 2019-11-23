@@ -17,21 +17,4 @@ public class RequestAnswer implements Serializable {
         this.tests = tests;
     }
 
-    public String getPackageId(){
-        return  this.packageId;
-    }
-
-    public List<TestResult> getTests(){
-        return this.tests;
-    }
-
-    public void setPackageId(String packageId){
-        this.packageId = packageId;
-    }
-
-    public void setTests(List<TestResult> tests){
-        this.tests = tests;
-    }
-
-
 }

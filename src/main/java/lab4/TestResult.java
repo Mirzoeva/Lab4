@@ -19,26 +19,4 @@ public class TestResult implements Serializable {
         this.succes = succes;
     }
 
-
-    public String getActualResult(){
-        return this.actualResult;
-    }
-
-    public String getExpectedResult(){
-        return this.expectedResult;
-    }
-
-    public void setActualResult(String actualResult){
-        this.actualResult = actualResult;
-    }
-
-    public void setExpectedResult(String expectedResult){
-        this.expectedResult = expectedResult;
-    }
-
-    public Boolean getSucces(){
-        return this.succes;
-    }
-
-
 }

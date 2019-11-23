@@ -18,6 +18,7 @@ import akka.pattern.Patterns;
 import java.util.concurrent.CompletionStage;
 import scala.concurrent.Future;
 import static akka.http.javadsl.server.PathMatchers.longSegment;
+import static akka.http.javadsl.server.PathMatchers.segment;
 
 
 public class AkkaTester extends  AllDirectives{
@@ -38,7 +39,7 @@ public class AkkaTester extends  AllDirectives{
         AkkaTester instance = new AkkaTester(actorRouter);
 
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
-                instance.createRoute(system).flow(system, materializer);
+                instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(Constans.hostName, Constans.port),
@@ -55,12 +56,12 @@ public class AkkaTester extends  AllDirectives{
 
     }
 
-    private Route createRoute(ActorSystem system){
+    private Route createRoute(){
         return concat(
                 get(() ->
                         pathPrefix("getPackage", () ->
-                                path(longSegment(), (Long id) -> {
-                                    Future<Object> result = Patterns.ask(actorRouter, id.toString(), Constans.timeOut);
+                                path(segment(), (String id) -> {
+                                    Future<Object> result = Patterns.ask(actorRouter, id, Constans.timeOut);
                                     return completeOKWithFuture(result, Jackson.marshaller());
                                 }
                                 ))),

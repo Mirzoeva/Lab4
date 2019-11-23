@@ -30,24 +30,6 @@ public class StorageActor extends AbstractActor {
         }
     }
 
-    //        try{
-//            for(TestData test: this.getTests(packageId)){
-//                String actualResult = test.getActualResult();
-//                String rightResult = test.getExpectedResult();
-//                TestResult testResult = new TestResult(
-//                        rightResult,
-//                        actualResult,
-//                        actualResult.equals(rightResult)
-//                );
-//                testAnswers.add(testResult);
-//            }
-//            return new RequestAnswers(packageId, testAnswers);
-//        } catch (Exception exception){
-//            exception.printStackTrace();
-//            return new RequestAnswers("No such package", testAnswers);
-//        }
-
-
     private RequestAnswers makeResults(String packageId) {
         ArrayList<TestResult> testAnswers = new ArrayList<>();
         try {
@@ -67,26 +49,6 @@ public class StorageActor extends AbstractActor {
             return new RequestAnswers("No such package", testAnswers);
         }
     }
-
-//    private RequestAnswers makeResults(String packageId){
-//        ArrayList<TestResult> testAnswers = new ArrayList<>();
-//        if (this.store.containsKey(packageId)){
-//            for(TestData test: this.store.get(packageId)){
-//                String actualResult = test.getActualResult();
-//                String rightResult = test.getExpectedResult();
-//                TestResult testResult = new TestResult(
-//                        rightResult,
-//                        actualResult,
-//                        actualResult.equals(rightResult)
-//                );
-//                testAnswers.add(testResult);
-//            }
-//            return new RequestAnswers(packageId, testAnswers);
-//        } else {
-//            return new RequestAnswers("No such package", testAnswers);
-//        }
-//    }
-
 
 
     @Override

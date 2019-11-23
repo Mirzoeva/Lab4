@@ -26,7 +26,7 @@ public class RouterActor extends AbstractActor {
         );
     }
 
-    private void RunTests(TestPackage testPackage){
+    private void runTests(TestPackage testPackage){
         for (TestData test: testPackage.getTests()){
             test.setParentPackage(testPackage);
             testerActor.tell(test, ActorRef.noSender());
@@ -36,7 +36,7 @@ public class RouterActor extends AbstractActor {
     @Override
     public Receive createReceive(){
         return ReceiveBuilder.create()
-                .match(TestPackage.class, msg -> RunTests(msg))
+                .match(TestPackage.class, msg -> runTests(msg))
                 .match(String.class, msg -> storageActor.forward(msg, getContext()))
                 .build();
 

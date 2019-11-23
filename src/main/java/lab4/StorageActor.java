@@ -30,10 +30,10 @@ public class StorageActor extends AbstractActor {
         }
     }
 
-    private RequestAnswers makeResults(String packageId) {
+    private RequestAnswers makeResults(String packageId){
         ArrayList<TestResult> testAnswers = new ArrayList<>();
-        try {
-            for (TestData test : this.getTests(packageId)) {
+        try{
+            for(TestData test: this.getTests(packageId)){
                 String actualResult = test.getActualResult();
                 String rightResult = test.getExpectedResult();
                 TestResult testResult = new TestResult(
@@ -44,10 +44,11 @@ public class StorageActor extends AbstractActor {
                 testAnswers.add(testResult);
             }
             return new RequestAnswers(packageId, testAnswers);
-        } catch (Exception exception) {
+        } catch (Exception exception){
             return new RequestAnswers("No such package", testAnswers);
         }
     }
+
 
 
     @Override

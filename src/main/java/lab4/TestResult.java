@@ -19,7 +19,7 @@ public class TestResult implements Serializable {
         this.succes = succes;
     }
 
-    
+
     public String getActualResult(){
         return this.actualResult;
     }

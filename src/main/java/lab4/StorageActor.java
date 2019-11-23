@@ -68,23 +68,7 @@ public class StorageActor extends AbstractActor {
 //        }
 //    }
 
-//        try{
-//            for(TestData test: this.getTests(packageId)){
-//                String actualResult = test.getActualResult();
-//                String rightResult = test.getExpectedResult();
-//                TestResult testResult = new TestResult(
-//                        rightResult,
-//                        actualResult,
-//                        actualResult.equals(rightResult)
-//                );
-//                testAnswers.add(testResult);
-//            }
-//            return new RequestAnswers(packageId, testAnswers);
-//        } catch (Exception exception){
-//            return new RequestAnswers("No such package", testAnswers);
-//        }
-//    }
-
+    
 
 
     @Override

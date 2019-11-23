@@ -21,13 +21,12 @@ import static akka.http.javadsl.server.PathMatchers.longSegment;
 
 
 public class AkkaTester extends  AllDirectives{
-
     private ActorRef actorRouter;
+
 
     private AkkaTester(ActorRef actorRouter){
         this.actorRouter = actorRouter;
     }
-
 
     public static void main(String[] args) throws Exception {
         ActorSystem system = ActorSystem.create("AkkaTester");

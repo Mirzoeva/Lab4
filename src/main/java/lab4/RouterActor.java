@@ -13,7 +13,7 @@ public class RouterActor extends AbstractActor {
     private ActorRef testerActor;
 
     RouterActor(ActorSystem system){
-        this.storageActor = system.actorOf(Props.create(StorageActors.class), "StorageActor");
+        this.storageActor = system.actorOf(Props.create(StorageActor.class), "StorageActor");
         this.strategy = new OneForOneStrategy(
                 Constans.retriesCount,
                 Duration.ofMinutes(1),

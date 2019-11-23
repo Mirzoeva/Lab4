@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StorageActors extends AbstractActor {
+public class StorageActor extends AbstractActor {
 
     private Map<String, ArrayList<TestData>> store = new HashMap<>();
 
@@ -30,7 +30,7 @@ public class StorageActors extends AbstractActor {
         }
     }
 
-    private RequestAnswer makeResults(String packageId){
+    private RequestAnswers makeResults(String packageId){
         ArrayList<TestResult> testAnswers = new ArrayList<>();
         try{
             for(TestData test: this.getTests(packageId)){
@@ -43,9 +43,9 @@ public class StorageActors extends AbstractActor {
                 );
                 testAnswers.add(testResult);
             }
-            return new RequestAnswer(packageId, testAnswers);
+            return new RequestAnswers(packageId, testAnswers);
         } catch (Exception exception){
-            return new RequestAnswer("No such package", testAnswers);
+            return new RequestAnswers("No such package", testAnswers);
         }
     }
 

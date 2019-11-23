@@ -30,7 +30,10 @@ public class StorageActors extends AbstractActor {
         }
     }
 
-//    private
+    private RequestAnswer makeResults(String packageId){
+
+
+    }
 
 
 
@@ -38,6 +41,7 @@ public class StorageActors extends AbstractActor {
     public Receive createreceive(){
         return ReceiveBuilder.create()
                 .match(TestData.class, test -> this.putTest(test))
-//                .match(String.class, id -> sender().tell())
+                .match(String.class, id -> sender().tell(makeResults(id), self()))
+                .build();
     }
 }

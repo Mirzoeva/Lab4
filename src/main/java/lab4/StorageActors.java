@@ -31,14 +31,28 @@ public class StorageActors extends AbstractActor {
     }
 
     private RequestAnswer makeResults(String packageId){
-
-
+        ArrayList<TestResult> testAnswers = new ArrayList<>();
+        try{
+            for(TestData test: this.getTests(packageId)){
+                String actualResult = test.getActualResult();
+                String rightResult = test.getRightResult();
+                TestResult testResult = new TestResult(
+                        rightResult,
+                        actualResult,
+                        actualResult.equals(rightResult)
+                );
+                testAnswers.add(testResult);
+            }
+            return new RequestAnswer(packageId, testAnswers);
+        } catch (Exception exception){
+            return new RequestAnswer("No such package", testAnswers);
+        }
     }
 
 
 
     @Override
-    public Receive createreceive(){
+    public Receive createReceive(){
         return ReceiveBuilder.create()
                 .match(TestData.class, test -> this.putTest(test))
                 .match(String.class, id -> sender().tell(makeResults(id), self()))

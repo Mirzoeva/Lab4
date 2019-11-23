@@ -11,10 +11,10 @@ public class TestResult implements Serializable {
     private Boolean succes;
 
     @JsonCreator
-    public TestResult(@JsonProperty("right") String rightResult,
+    public TestResult(@JsonProperty("expected") String expectedResult,
                       @JsonProperty("actual")String actualResult,
                       @JsonProperty("success") Boolean succes){
-        this.expectedResult = rightResult;
+        this.expectedResult = expectedResult;
         this.actualResult = actualResult;
         this.succes = succes;
     }

@@ -22,6 +22,33 @@ public class StorageActor extends AbstractActor {
         }
     }
 
+//    private ArrayList<TestData> getTests(String packageId) throws Exception{
+//        if (this.store.containsKey(packageId)){
+//            return this.store.get(packageId);
+//        } else {
+//            throw  new Exception("No such package");
+//        }
+//    }
+//
+//    private RequestAnswers makeResults(String packageId){
+//        ArrayList<TestResult> testAnswers = new ArrayList<>();
+//        try{
+//            for(TestData test: this.getTests(packageId)){
+//                String actualResult = test.getActualResult();
+//                String rightResult = test.getExpectedResult();
+//                TestResult testResult = new TestResult(
+//                        rightResult,
+//                        actualResult,
+//                        actualResult.equals(rightResult)
+//                );
+//                testAnswers.add(testResult);
+//            }
+//            return new RequestAnswers(packageId, testAnswers);
+//        } catch (Exception exception){
+//            return new RequestAnswers("No such package", testAnswers);
+//        }
+//    }
+
     private ArrayList<TestData> getTests(String packageId) throws Exception{
         if (this.store.containsKey(packageId)){
             return this.store.get(packageId);
@@ -30,10 +57,10 @@ public class StorageActor extends AbstractActor {
         }
     }
 
-    private RequestAnswers makeResults(String packageId){
+    private RequestAnswers makeResults(String packageId) {
         ArrayList<TestResult> testAnswers = new ArrayList<>();
-        try{
-            for(TestData test: this.getTests(packageId)){
+        if (this.store.containsKey(packageId)) {
+            for (TestData test : this.store.get(packageId)) {
                 String actualResult = test.getActualResult();
                 String rightResult = test.getExpectedResult();
                 TestResult testResult = new TestResult(
@@ -44,10 +71,27 @@ public class StorageActor extends AbstractActor {
                 testAnswers.add(testResult);
             }
             return new RequestAnswers(packageId, testAnswers);
-        } catch (Exception exception){
+        } else {
             return new RequestAnswers("No such package", testAnswers);
         }
     }
+    
+//        try{
+//            for(TestData test: this.getTests(packageId)){
+//                String actualResult = test.getActualResult();
+//                String rightResult = test.getExpectedResult();
+//                TestResult testResult = new TestResult(
+//                        rightResult,
+//                        actualResult,
+//                        actualResult.equals(rightResult)
+//                );
+//                testAnswers.add(testResult);
+//            }
+//            return new RequestAnswers(packageId, testAnswers);
+//        } catch (Exception exception){
+//            return new RequestAnswers("No such package", testAnswers);
+//        }
+//    }
 
 
 

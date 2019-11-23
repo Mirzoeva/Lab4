@@ -22,13 +22,13 @@ public class StorageActor extends AbstractActor {
         }
     }
 
-//    private ArrayList<TestData> getTests(String packageId) throws Exception{
-//        if (this.store.containsKey(packageId)){
-//            return this.store.get(packageId);
-//        } else {
-//            throw  new Exception("No such package");
-//        }
-//    }
+    private ArrayList<TestData> getTests(String packageId) throws Exception{
+        if (this.store.containsKey(packageId)){
+            return this.store.get(packageId);
+        } else {
+            throw  new Exception("No such package");
+        }
+    }
 
     //        try{
 //            for(TestData test: this.getTests(packageId)){
@@ -48,10 +48,9 @@ public class StorageActor extends AbstractActor {
 //        }
 
 
-    private RequestAnswers makeResults(String packageId){
-        ArrayList<TestResult> testAnswers = new ArrayList<>();
-        if (this.store.containsKey(packageId)){
-            for(TestData test: this.store.get(packageId)){
+    private RequestAnswers makeResults(String packageId) {
+        try {
+            for (TestData test : this.getTests(packageId)) {
                 String actualResult = test.getActualResult();
                 String rightResult = test.getExpectedResult();
                 TestResult testResult = new TestResult(
@@ -62,10 +61,30 @@ public class StorageActor extends AbstractActor {
                 testAnswers.add(testResult);
             }
             return new RequestAnswers(packageId, testAnswers);
-        } else {
+        } catch (Exception exception) {
+            exception.printStackTrace();
             return new RequestAnswers("No such package", testAnswers);
         }
     }
+
+//    private RequestAnswers makeResults(String packageId){
+//        ArrayList<TestResult> testAnswers = new ArrayList<>();
+//        if (this.store.containsKey(packageId)){
+//            for(TestData test: this.store.get(packageId)){
+//                String actualResult = test.getActualResult();
+//                String rightResult = test.getExpectedResult();
+//                TestResult testResult = new TestResult(
+//                        rightResult,
+//                        actualResult,
+//                        actualResult.equals(rightResult)
+//                );
+//                testAnswers.add(testResult);
+//            }
+//            return new RequestAnswers(packageId, testAnswers);
+//        } else {
+//            return new RequestAnswers("No such package", testAnswers);
+//        }
+//    }
 
 
 

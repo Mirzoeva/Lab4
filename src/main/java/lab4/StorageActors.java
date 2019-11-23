@@ -35,7 +35,7 @@ public class StorageActors extends AbstractActor {
         try{
             for(TestData test: this.getTests(packageId)){
                 String actualResult = test.getActualResult();
-                String rightResult = test.getRightResult();
+                String rightResult = test.getExpectedResult();
                 TestResult testResult = new TestResult(
                         rightResult,
                         actualResult,

@@ -9,16 +9,16 @@ public class TestData implements Serializable {
     private TestPackage parentPackage;
     private String testName;
     private String actualResult;
-    private String rightResult;
-    private Object[] parameters;
+    private String expectedResult;
+    private Object[] params;
 
     @JsonCreator
     public TestData(@JsonProperty("testName")String testName,
-                      @JsonProperty("rightResult")String rightResult,
-                      @JsonProperty("parameters")Object[] parameters){
+                      @JsonProperty("expectedResult")String expectedResult,
+                      @JsonProperty("params")Object[] params){
         this.testName = testName;
-        this.rightResult = rightResult;
-        this.parameters = parameters;
+        this.expectedResult = expectedResult;
+        this.params = params;
     }
 
     public void setActualResult(String actualResult){
@@ -41,12 +41,12 @@ public class TestData implements Serializable {
         return this.testName;
     }
 
-    public  String getRightResult(){
-        return this.rightResult;
+    public  String getExpectedResult(){
+        return this.expectedResult;
     }
 
-    public Object[] getParameters(){
-        return this.parameters;
+    public Object[] getParams(){
+        return this.params;
     }
 
 

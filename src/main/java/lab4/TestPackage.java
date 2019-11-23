@@ -7,17 +7,17 @@ import java.util.List;
 
 public class TestPackage implements Serializable {
     private String packageId;
-    private String jsFunctionName;
-    private String jsCode;
+    private String functionName;
+    private String jsScript;
     private List<TestData> tests;
 
     public TestPackage(@JsonProperty("packageId") String packageId,
-                       @JsonProperty("jsCode") String jsCode,
-                       @JsonProperty("jsFunctionName") String jsFunctionName,
+                       @JsonProperty("jsScript") String jsScript,
+                       @JsonProperty("functionName") String functionName,
                        @JsonProperty("tests") List<TestData> tests){
         this.packageId = packageId;
-        this.jsFunctionName = jsFunctionName;
-        this.jsCode = jsCode;
+        this.functionName = functionName;
+        this.jsScript = jsScript;
         this.tests = tests;
     }
 
@@ -25,12 +25,12 @@ public class TestPackage implements Serializable {
         return this.packageId;
     }
 
-    public String getJsFunctionName(){
-        return this.jsFunctionName;
+    public String getFunctionName(){
+        return this.functionName;
     }
 
-    public String getJsCode(){
-        return this.jsCode;
+    public String getJsScript(){
+        return this.jsScript;
     }
 
     public List<TestData> getTests(){

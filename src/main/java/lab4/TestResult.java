@@ -7,14 +7,14 @@ import java.io.Serializable;
 
 public class TestResult implements Serializable {
     private String actualResult;
-    private String rightResult;
+    private String expectedResult;
     private Boolean succes;
 
     @JsonCreator
     public TestResult(@JsonProperty("right") String rightResult,
                       @JsonProperty("actual")String actualResult,
                       @JsonProperty("success") Boolean succes){
-        this.rightResult = rightResult;
+        this.expectedResult = rightResult;
         this.actualResult = actualResult;
         this.succes = succes;
     }
@@ -24,16 +24,16 @@ public class TestResult implements Serializable {
         return this.actualResult;
     }
 
-    public String getRightResult(){
-        return this.rightResult;
+    public String getExpectedResult(){
+        return this.expectedResult;
     }
 
     public void setActualResult(String actualResult){
         this.actualResult = actualResult;
     }
 
-    public void setRightResult(String rightResult){
-        this.rightResult = rightResult;
+    public void setExpectedResult(String expectedResult){
+        this.expectedResult = expectedResult;
     }
 
     public Boolean getSucces(){
